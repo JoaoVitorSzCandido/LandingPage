@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Barbearia — Landing Page"
+description = "Landing page responsiva para portfólio de uma barbearia, com identidade editorial contemporânea, seções comerciais e conteúdo substituível por placeholders."
+version = "1.0.0"
+id = "artifacts/atelier-barbearia"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20479
+
+[services.development]
+run = "pnpm --filter @workspace/atelier-barbearia run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/atelier-barbearia", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/atelier-barbearia/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20479"
+BASE_PATH = "/"

@@ -1,6 +1,6 @@
-# [Project name]
+# Barbearia — Landing Page
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Landing page de portfólio para uma barbearia, com conteúdo comercial apresentado como placeholders até que os dados reais sejam fornecidos.
 
 ## Run & Operate
 
@@ -22,7 +22,8 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- Landing page and execution notes: `artifacts/atelier-barbearia/`
+- Research references and setup instructions: `artifacts/atelier-barbearia/README.md`
 
 ## Architecture decisions
 
@@ -30,11 +31,11 @@ _Populate as you build — non-obvious choices a reader couldn't infer from the 
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+One-page showcase with sections for services, space, work, barbers, reviews, booking, and contact.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Do not invent the barbershop name, slogan, commercial copy, history, prices, testimonials, address, phone, or social profiles; keep these as visible placeholders until real details are supplied.
 
 ## Gotchas
 
