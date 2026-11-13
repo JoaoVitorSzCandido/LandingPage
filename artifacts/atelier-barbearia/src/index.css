@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
-@plugin "@tailwindcss/typography";
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -161,5 +160,5 @@ button { font:inherit; }
  .booking-grid { grid-template-columns:1fr; gap:40px; } .booking .section-title { font-size:clamp(3.2rem,13vw,5rem); } .contact-row { grid-template-columns:95px 1fr; }
  .footer-top { flex-direction:column; padding-bottom:40px; } .footer-nav { gap:18px 24px; } .footer-detail { text-align:left; } .footer-bottom { gap:20px; flex-wrap:wrap; }
 }
-@media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
 @media(max-width:680px) { .whatsapp-fab { right:16px; bottom:16px; width:54px; height:54px; padding:0; justify-content:center; } .whatsapp-fab-label { display:none; } .hours-card { padding:20px 18px 6px; } .hours-title { font-size:21px; } .hours-badge { font-size:9px; padding:8px 12px; margin-bottom:22px; } }
