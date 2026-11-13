@@ -7,3 +7,7 @@
 - Se o processo for morto por memória ("Killed"), rode com `NODE_OPTIONS=--max-old-space-size=1024`.
 - Imagens dos barbeiros (team-1/2/3.jpg) vieram do Unsplash; trocar antes de publicar.
 - Conteúdo (nomes, serviços, contatos) é fictício — placeholder para dados reais.
+
+## Deploy (Vercel)
+- Projeto Vercel: `barbershoptemplate` (conta sussy5), linkado via `.vercel/` no root.
+- Produção: https://barbershoptemplate-red.vercel.app — deploy com `vercel deploy --prod --yes --token <TOKEN>` (token não é salvo em arquivo).

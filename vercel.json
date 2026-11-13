@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd artifacts/atelier-barbearia && pnpm run build",
+  "outputDirectory": "artifacts/atelier-barbearia/dist/public",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
