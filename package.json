@@ -13,6 +13,10 @@
     "@replit/connectors-sdk": "^0.7.0"
   },
   "devDependencies": {
+    "@rollup/rollup-linux-arm64-musl": "^4.68.2",
+    "@tailwindcss/oxide-linux-arm64-musl": "4.3.3",
+    "lightningcss": "^1.33.0",
+    "lightningcss-linux-arm64-musl": "1.33.0",
     "prettier": "^3.9.10",
     "typescript": "~5.9.3"
   }
