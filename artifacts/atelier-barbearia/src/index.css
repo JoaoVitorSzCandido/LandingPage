@@ -25,6 +25,8 @@
 .dark { --background: 169 19% 12%; --foreground: 42 29% 94%; --border: 169 10% 30%; --input: 169 10% 30%; --card: 169 19% 15%; --card-foreground: 42 29% 94%; --popover: 169 19% 15%; --popover-foreground: 42 29% 94%; --primary: 42 29% 94%; --primary-foreground: 169 19% 15%; --secondary: 169 10% 23%; --secondary-foreground: 42 29% 94%; --muted: 169 10% 23%; --muted-foreground: 42 12% 68%; --accent: 13 72% 58%; --accent-foreground: 42 29% 94%; --ring: 13 72% 58%; --destructive: 3 65% 50%; --destructive-foreground: 42 29% 94%; --chart-1: 13 72% 58%; --chart-2: 42 29% 78%; --chart-3: 169 22% 50%; --chart-4: 38 22% 64%; --chart-5: 165 8% 45%; --sidebar: 169 19% 12%; --sidebar-foreground: 42 29% 94%; --sidebar-border: 169 10% 30%; --sidebar-primary: 13 72% 58%; --sidebar-primary-foreground: 42 29% 94%; --sidebar-accent: 169 10% 23%; --sidebar-accent-foreground: 42 29% 94%; --sidebar-ring: 13 72% 58%; }
 @layer base { * { @apply border-border; } html { scroll-behavior: smooth; scroll-padding-top: 84px; } body { @apply font-sans antialiased bg-background text-foreground; margin:0; } }
 
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
 :root { font-synthesis:none; text-rendering:optimizeLegibility; }
 * { box-sizing:border-box; }
 ::selection { background:#d96e50; color:#f4f0e7; }
@@ -115,6 +117,27 @@ button { font:inherit; }
 .contact-row span:first-child { font:10px var(--app-font-mono); text-transform:uppercase; letter-spacing:.1em; }
 .booking-action { display:inline-flex; margin-top:28px; padding:15px 20px; border:1px solid #18352f; gap:30px; align-items:center; font:500 10px var(--app-font-mono); letter-spacing:.13em; text-transform:uppercase; transition:background .2s,color .2s; }
 .booking-action:hover { background:#18352f; color:#f4f0e7; }
+.hours-card { background:#18352f; color:#f4f0e7; padding:24px 24px 10px; margin-bottom:28px; }
+.hours-status { display:flex; align-items:center; gap:10px; font:500 10px var(--app-font-mono); letter-spacing:.14em; text-transform:uppercase; padding-bottom:15px; border-bottom:1px solid rgba(244,240,231,.22); }
+.hours-dot { position:relative; width:9px; height:9px; border-radius:50%; flex:none; }
+.hours-dot.is-open { background:#4ade80; }
+.hours-dot.is-open::after { content:""; position:absolute; inset:0; border-radius:50%; background:#4ade80; animation:pulse-ring 2.2s ease-out infinite; }
+.hours-dot.is-closed { background:#df8a6f; }
+@keyframes pulse-ring { 0% { transform:scale(1); opacity:.55; } 100% { transform:scale(2.6); opacity:0; } }
+.hours-title { margin:18px 0 4px; font:500 24px var(--app-font-serif); }
+.hours-rows { padding-bottom:12px; }
+.hours-row { display:flex; justify-content:space-between; align-items:baseline; gap:14px; padding:12px 0; border-bottom:1px solid rgba(244,240,231,.14); font-size:13px; }
+.hours-row:last-child { border-bottom:0; }
+.hours-row span:last-child { font:11px var(--app-font-mono); letter-spacing:.08em; }
+.hours-row-closed span:last-child { color:#df8a6f; }
+.hours-badge { display:inline-flex; align-items:center; gap:9px; margin:0 0 30px; padding:9px 15px; border:1px solid rgba(244,240,231,.28); border-radius:999px; background:rgba(13,30,27,.5); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font:500 10px var(--app-font-mono); letter-spacing:.13em; text-transform:uppercase; color:rgba(244,240,231,.92); transition:border-color .2s,background .2s; }
+.hours-badge:hover { border-color:rgba(244,240,231,.6); background:rgba(13,30,27,.72); }
+.hours-badge .hours-dot { width:7px; height:7px; }
+.hours-badge-sep { opacity:.45; }
+.whatsapp-fab { position:fixed; right:26px; bottom:26px; z-index:60; display:flex; align-items:center; gap:12px; background:#25d366; color:#0b2e1c; padding:15px 22px 15px 17px; border-radius:999px; box-shadow:0 14px 34px rgba(7,21,18,.35); transition:transform .25s,box-shadow .25s; }
+.whatsapp-fab:hover { transform:translateY(-3px); box-shadow:0 20px 44px rgba(7,21,18,.42); }
+.whatsapp-fab svg { display:block; }
+.whatsapp-fab-label { font:500 10px var(--app-font-mono); letter-spacing:.13em; text-transform:uppercase; white-space:nowrap; }
 .footer { background:#18352f; color:#f4f0e7; padding:54px 0 26px; }
 .footer-top { display:flex; justify-content:space-between; gap:30px; padding-bottom:66px; }
 .footer-nav { display:flex; gap:27px; flex-wrap:wrap; align-content:start; }
@@ -139,3 +162,4 @@ button { font:inherit; }
  .footer-top { flex-direction:column; padding-bottom:40px; } .footer-nav { gap:18px 24px; } .footer-detail { text-align:left; } .footer-bottom { gap:20px; flex-wrap:wrap; }
 }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
+@media(max-width:680px) { .whatsapp-fab { right:16px; bottom:16px; width:54px; height:54px; padding:0; justify-content:center; } .whatsapp-fab-label { display:none; } .hours-card { padding:20px 18px 6px; } .hours-title { font-size:21px; } .hours-badge { font-size:9px; padding:8px 12px; margin-bottom:22px; } }

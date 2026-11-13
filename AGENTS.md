@@ -7,6 +7,7 @@
 - Se o processo for morto por memória ("Killed"), rode com `NODE_OPTIONS=--max-old-space-size=1024`.
 - Imagens dos barbeiros (team-1/2/3.jpg) vieram do Unsplash; trocar antes de publicar.
 - Conteúdo (nomes, serviços, contatos) é fictício — placeholder para dados reais.
+- Rolagem nativa via CSS: `scroll-behavior: smooth` + `scroll-padding-top: 84px` no `html`; desativado automaticamente se `prefers-reduced-motion: reduce`. Todos os links `a[href^="#"]` funcionam nativamente sem JS — menu, HoursBadge, Brand, footers.
 
 ## Deploy (Vercel)
 - Projeto Vercel: `barbershoptemplate` (conta sussy5), linkado via `.vercel/` no root.
